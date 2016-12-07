@@ -11,9 +11,9 @@ namespace SimpleClasses
   
         public class Customer
         {
-            protected string Surname;
-            protected string Name;
-            protected string FatherName;
+            public string Surname{get;protected set;}
+            public string Name { get; protected set; }
+            public string FatherName { get; protected set; }
             protected string Adrress;
             protected string PhoneNumber;
             protected string NumCreditCard;
@@ -30,6 +30,17 @@ namespace SimpleClasses
                 AdrressLive = "невідомо";
                 Cash = 0;
             }
+            protected string CreditCard
+            {
+                get { return NumCreditCard; }
+                set { if (value.Length < 15) NumCreditCard = value; else NumCreditCard = "0000000000000"; }
+            }
+            public double CashValue
+            { get { return Cash; } }
+            public string CrashPhoneNum
+            {
+                set { if (value.Length < 15) PhoneNumber = value; }
+            }
 
             public Customer(string surname, string name, string fathername, string adrress, string phonenumber, string numcreditcard, string adrresslive, double cash)
             {
@@ -38,7 +49,7 @@ namespace SimpleClasses
                 FatherName = fathername;
                 Adrress = adrress;
                 PhoneNumber = phonenumber;
-                NumCreditCard = numcreditcard;
+                CreditCard = numcreditcard;
                 AdrressLive = adrresslive;
                 Cash = cash;
             }
@@ -49,7 +60,7 @@ namespace SimpleClasses
                 FatherName = fathername;
                 Adrress = "невідомо";
                 PhoneNumber = phonenumber;
-                NumCreditCard = numcreditcard;
+                CreditCard = numcreditcard;
                 AdrressLive = adrresslive;
                 Cash = 0;
             }
@@ -76,9 +87,9 @@ namespace SimpleClasses
             }
             public string GetNumCreditCard()
             {
-                return NumCreditCard;
+                return CreditCard;
             }
-            public double GetCash(string phonenum)
+            public double GetCash (string phonenum)
             {
                 return Cash;
             }
@@ -291,7 +302,9 @@ namespace SimpleClasses
             {
                 ConsoleConfig("OOП 1");
                 Customer yurko = new Customer("Polischuk", "Yurii", "Kostyantinovich", "0983778101", "1234567890123", "Chudniv");
+                yurko.CrashPhoneNum = "380983778101";
                 yurko.ConsoleWrite();
+                Console.WriteLine("{0} {1} {2} {3}",yurko.Surname,yurko.Name,yurko.FatherName,yurko.CashValue);// можна прочитать но неможна змінити 
                 Console.Write("Для зміни адреси введіть свій номер телефону :");
                 string num = Console.ReadLine();
                 Console.Write("Для зміни адреси введіть свою нову адресу :");
