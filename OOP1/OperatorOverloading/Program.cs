@@ -89,6 +89,22 @@ namespace OperatorOverloading
             if (sing == false) res *= -1.0;
             return res;
         }
+        public static explicit operator double(Fraction a)
+        {
+            double res = a.intPart;
+            res += (double)a.numcator /a.denominator;
+            if (a.sing == false) res *= -1.0;
+            return res;
+        }
+        public static explicit operator string(Fraction a)
+        {
+            string res = "";
+            if (a.sing == false) res += "-";
+            if (a.intPart != 0) res += a.intPart;
+            if (a.numcator != 0) res += a.numcator + "/" + a.denominator;
+            if (res == "") res = "0";
+            return res;
+        }
         public void GetIntPart()
         {
             if (numcator >= denominator)
@@ -115,6 +131,21 @@ namespace OperatorOverloading
             if (res.numcator < 0)
             {
                 res.numcator *= -1;
+                res.sing = false;
+            }
+            res.GetIntPart();
+            return res;
+
+        }
+        public static Fraction operator +(Fraction a, int b)
+        {
+            Fraction res = new Fraction(a);
+            res.intPart += a.intPart + b;
+            res.reduce();
+
+            if (res.intPart < 0)
+            {
+                res.intPart *= -1;
                 res.sing = false;
             }
             res.GetIntPart();
@@ -208,6 +239,7 @@ namespace OperatorOverloading
             Console.WriteLine("a="+a.ToString()+" b="+ b.ToString());
            
             Fraction c = new Fraction();
+            Fraction d = new Fraction();
             c = a + b;
             Console.WriteLine("a+b="+c.ToString());
             c=a-b;
@@ -225,7 +257,8 @@ namespace OperatorOverloading
             if (a < b) Console.WriteLine("a<b");
             if (a > b) Console.WriteLine("a>b");
             Console.WriteLine("a->Double= " + a.GetDouble());
-
+            Console.WriteLine("b->Double= " + (double)b);
+            Console.WriteLine("b->String= " + (string)b);
             Console.ReadKey();
         }
     }
