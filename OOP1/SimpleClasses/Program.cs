@@ -5,251 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
+using SimpleClasses._Customer;
+using SimpleClasses._Student;
+using SimpleClasses._Product;
 
 namespace SimpleClasses
 {
   
-        public class Customer
-        {
-            public string Surname{get;protected set;}
-            public string Name { get; protected set; }
-            public string FatherName { get; protected set; }
-            protected string Adrress;
-            protected string PhoneNumber;
-            protected string NumCreditCard;
-            protected string AdrressLive;
-            protected double Cash;
-            public Customer()
-            {
-                Surname = "невідомо";
-                Name = "невідомо";
-                FatherName = "невідомо";
-                Adrress = "невідомо";
-                PhoneNumber = "невідомо";
-                NumCreditCard = "невідомо";
-                AdrressLive = "невідомо";
-                Cash = 0;
-            }
-            protected string CreditCard
-            {
-                get { return NumCreditCard; }
-                set { if (value.Length < 15) NumCreditCard = value; else NumCreditCard = "0000000000000"; }
-            }
-            public double CashValue
-            { get { return Cash; } }
-            public string CrashPhoneNum
-            {
-                set { if (value.Length < 15) PhoneNumber = value; }
-            }
-
-            public Customer(string surname, string name, string fathername, string adrress, string phonenumber, string numcreditcard, string adrresslive, double cash)
-            {
-                Surname = surname;
-                Name = name;
-                FatherName = fathername;
-                Adrress = adrress;
-                PhoneNumber = phonenumber;
-                CreditCard = numcreditcard;
-                AdrressLive = adrresslive;
-                Cash = cash;
-            }
-            public Customer(string surname, string name, string fathername, string phonenumber, string numcreditcard, string adrresslive)
-            {
-                Surname = surname;
-                Name = name;
-                FatherName = fathername;
-                Adrress = "невідомо";
-                PhoneNumber = phonenumber;
-                CreditCard = numcreditcard;
-                AdrressLive = adrresslive;
-                Cash = 0;
-            }
-            public bool ChangeAdrress(string adrress, string phonenumber)
-            {
-                if (phonenumber == PhoneNumber) { Adrress = adrress; return true; }
-                else return false;
-            }
-            public void Change(string phonenumber, string oldphonenumber)
-            {
-                if (PhoneNumber == oldphonenumber) PhoneNumber = phonenumber;
-            }
-            public string GetName()
-            {
-                return Name;
-            }
-            public string GetSurname()
-            {
-                return Surname;
-            }
-            public string GetFatherName()
-            {
-                return FatherName;
-            }
-            public string GetNumCreditCard()
-            {
-                return CreditCard;
-            }
-            public double GetCash (string phonenum)
-            {
-                return Cash;
-            }
-            public string GetAdrress()
-            {
-                return Adrress;
-            }
-            public string GetAdrressLive()
-            {
-                return AdrressLive;
-            }
-            public string GetPhoneNumber()
-            {
-                return PhoneNumber;
-            }
-            public void ConsoleWrite()
-            {
-                Console.Write("Прізвище: {0}\nІм'я: {1}\nПо батькові: {2}\nАдреса: {3}\nТелефон: {4}\nНомер кредитної картки:{5}\nАдреса проживання: {6}\nЗагальна сума покупок: {7}\n", Surname, Name, FatherName, Adrress, PhoneNumber, NumCreditCard, AdrressLive, Cash);
-            }
-
-        }
-        public class Student
-        {
-            protected string Surname;
-            protected string Name;
-            protected string FatherName;
-            protected DateTime Birthday;
-            protected string Adrress;
-            protected string PhoneNumber;
-            protected string Department;
-            protected int Course;
-            public Student()
-            {
-                Surname = "невідомо";
-                Name = "невідомо";
-                FatherName = "невідомо";
-                Birthday = DateTime.Parse("01.01.1977");
-                Adrress = "невідомо";
-                PhoneNumber = "невідомо";
-                Department = "невідомо";
-                Course = 0;
-            }
-            public Student(string surname, string name, string fathername, string birthday, string adrress, string phonenumber, string department, int course)
-            {
-                Surname = surname;
-                Name = name;
-                FatherName = fathername;
-                Birthday = DateTime.Parse("01.01.1977");
-                Adrress = adrress;
-                PhoneNumber = phonenumber;
-                Department = department;
-                Course = course;
-            }
-            public Student(string surname, string name, string fathername, string department, int course)
-            {
-                Surname = surname;
-                Name = name;
-                FatherName = fathername;
-                Birthday = DateTime.Parse("01.01.1977");
-                Adrress = "невідомо";
-                PhoneNumber = "невідомо";
-                Department = department;
-                Course = course;
-            }
-            public string GetSurname()
-            { return Surname; }
-            public string GetName()
-            { return Name; }
-            public string GetFatherName()
-            { return FatherName; }
-            public DateTime GetBirthday()
-            { return Birthday; }
-            public string GetAdrress()
-            {
-                return Adrress;
-            }
-            public string GetPhoneNumber()
-            {
-                return PhoneNumber;
-            }
-            public string GetDepartament()
-            {
-                return Department;
-            }
-            public int GetCourse()
-            {
-                return Course;
-            }
-            public void SetSNF(string surname, string name, string fathername)
-            {
-                Surname = surname;
-                Name = name;
-                FatherName = fathername;
-            }
-            public void SetCourse(int course)
-            {
-                Course = course;
-            }
-        }
-        public class Product
-        {
-            protected string ProductName;
-            protected string Manufacturer;
-            protected double Price;
-            protected int ShelfLife;
-            protected int Quantity;
-            protected DateTime ExpirationDate;
-            public Product()
-            {
-                ProductName = "default";
-                Manufacturer = "default";
-                Price = 0;
-                ShelfLife = 0;
-                Quantity = 0;
-                ExpirationDate = DateTime.Today;
-            }
-            public Product(string ProductName, string Manufacturer, double Price, int ShelfLife, int Quantity, DateTime ExpirationDate)
-            {
-                this.ProductName = ProductName;
-                this.Manufacturer = Manufacturer;
-                this.Price = Price;
-                this.ShelfLife = ShelfLife;
-                this.Quantity = Quantity;
-                this.ExpirationDate = ExpirationDate;
-            }
-            public Product(string ProductName, double Price, int Quantity, DateTime ExpirationDate)
-            {
-                this.ProductName = ProductName;
-                this.Manufacturer = "default";
-                this.Price = Price;
-                this.ShelfLife = 0;
-                this.Quantity = Quantity;
-                this.ExpirationDate = ExpirationDate;
-            }
-            public string GetProductName()
-            {
-                return ProductName;
-            }
-            public string GetManufacturer()
-            {
-                return Manufacturer;
-            }
-            public double GetPrice()
-            {
-                return Price;
-            }
-            public int GetShelfLife()
-            {
-                return ShelfLife;
-            }
-            public int GetQuantity()
-            {
-                return Quantity;
-            }
-            public DateTime GetExpirationDate()
-            {
-                return ExpirationDate;
-            }
-
-        }
+      
         public class CustomerFile
         {
             protected Customer[] customers;
@@ -265,7 +28,7 @@ namespace SimpleClasses
                     int i =0;
                     foreach (Match m in match)
                     {
-                        
+
                         customers[i] = new Customer(m.Groups[1].Value, m.Groups[2].Value, m.Groups[3].Value, m.Groups[4].Value, m.Groups[6].Value, m.Groups[7].Value, m.Groups[8].Value, double.Parse(m.Groups[9].Value));
                         i++;
                     }
@@ -301,7 +64,16 @@ namespace SimpleClasses
             static void Main(string[] args)
             {
                 ConsoleConfig("OOП 1");
-                Customer yurko = new Customer("Polischuk", "Yurii", "Kostyantinovich", "0983778101", "1234567890123", "Chudniv");
+                ProductWeigth pw = new ProductWeigth("apple", "apple inc.", 12.34, 12, 12, DateTime.Parse("12.12.2016"), 12, 23, 34, 100);
+                ProductSize a = new ProductSize("apple", "apple inc.", 12.34, 12, 12, DateTime.Parse("12.12.2016"), 12, 23, 34);
+                a.ConsoleWrite();
+
+                CustomerCart z = new CustomerCart();
+                z.ConsoleWrite();
+                CustomerCart a = new CustomerCart("pavlyuk", "vasya", "grigoryovich", "zhitomir", "vassya@vasya.com", "32342234234234", "zhitomir", 2343.23, 213243, "socks");
+                a.setNewCash(200);
+                a.ConsoleWrite();
+                Customer yurko = new Customer ("Polischuk", "Yurii", "Kostyantinovich", "0983778101", "1234567890123", "Chudniv");
                 yurko.CrashPhoneNum = "380983778101";
                 yurko.ConsoleWrite();
                 Console.WriteLine("{0} {1} {2} {3}",yurko.Surname,yurko.Name,yurko.FatherName,yurko.CashValue);// можна прочитать но неможна змінити 
@@ -319,6 +91,9 @@ namespace SimpleClasses
                 Console.Write("Введіть номер телефону того кого шукаєте");
                 string phone = Console.ReadLine();
                 coust.SearchPhone(phone);
+                ProductWeigth pw = new ProductWeigth("apple", "apple inc.", 12.34, 12, 12, DateTime.Parse("12.12.2016"), 12, 23, 34, 100);
+                ProductSize ap = new ProductSize("apple", "apple inc.", 12.34, 12, 12, DateTime.Parse("12.12.2016"), 12, 23, 34);
+                ap.ConsoleWrite();
 
                 Console.ReadKey();
             }

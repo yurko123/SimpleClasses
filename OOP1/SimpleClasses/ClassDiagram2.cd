@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SimpleClasses._Customer.Customer" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEUAAABAAAAgAQAAQAQAhAABAAAKBAIAEAIANAA=</HashCode>
+      <FileName>Customer\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleClasses._Customer.CustomerCart" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAACAoAIAAAAAAAg=</HashCode>
+      <FileName>Customer\CustomerCart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleClasses.Product.Product" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAAAQACAAAAEAAAEAAAUAIACAAAAAAAgAAIAAA=</HashCode>
+      <FileName>Product\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleClasses.Product.ProductSize" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAQAQAAAAABAAAAACAAAAAAAIEAAAAA=</HashCode>
+      <FileName>Product\ProductSize.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleClasses.Product.ProductWeigth" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Product\ProductWeigth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleClasses.CustomerFile" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleClasses.Program" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleClasses.GradeBook" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACACAAAAAAAAAAAAAAAAAAAAAEAACAAAAAAAAIAA=</HashCode>
+      <FileName>Student\GradeBook.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleClasses.StudentTicket" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQABAAAAAAAAAAAAAAAAAAAAAQAAAABAAAA=</HashCode>
+      <FileName>Student\StudentTicket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SimpleClasses._Student.Student" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAEEAAAAAAAQAAIAIQAQAFAALIAACBAAAAAAABAA=</HashCode>
+      <FileName>Student\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
